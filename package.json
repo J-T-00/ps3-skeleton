@@ -1,0 +1,17 @@
+{
+  "name": "ps3-skeleton",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "serve": "NODE_ENV=production node index.js"
+  },
+  "author": "julius.toews@outlook.de",
+  "license": "ISC",
+  "dependencies": {
+    "joystick": "^0.1.2",
+    "onoff": "^6.0.3",
+    "pigpio": "^3.3.1"
+  }
+}

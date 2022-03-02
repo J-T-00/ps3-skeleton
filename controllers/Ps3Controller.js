@@ -1,0 +1,70 @@
+const joystick = require("joystick");
+
+export class Ps3Controller {
+  controller;
+
+  constructor() {
+    // Init PS3 controller, 0 = /dev/input/js0
+    // second param = deadzone
+    // third param = sensitivity
+    this.controller = new joystick(0, 3500, 350);
+  }
+
+  listen() {
+    // On button press (triggers when pressed and when released)
+    this.controller.on("button", (button) => {
+      console.log("button", button);
+      switch (button.number) {
+        case 0: // cross
+          this.onCrossClick(button);
+          break;
+        case 1: // circle
+          this.onCircleClick(button);
+          break;
+        case 2: // triangle
+          this.onTriangleClick(button);
+          break;
+        case 3: // square
+          this.onSquareClick(button);
+          break;
+      }
+    });
+
+    // On axis movement
+    this.controller.on("axis", (axis) => {
+      console.log("axis", axis);
+      switch (axis.number) {
+        case 1: // left y-axis
+          this.onLeftAxisMove(axis);
+          break;
+        case 4: // right y-axis
+          this.onRightAxisMove(axis);
+          break;
+      }
+    });
+  }
+
+  onCrossClick(button) {
+    console.log("cross click", button);
+  }
+
+  onCircleClick(button) {
+    console.log("circle click", button);
+  }
+
+  onTriangleClick(button) {
+    console.log("triangle click", button);
+  }
+
+  onSquareClick(button) {
+    console.log("square click", button);
+  }
+
+  onLeftAxisMove(axis) {
+    console.log("Left JoyStick axis", axis);
+  }
+
+  onRightAxisMove(axis) {
+    console.log("Right JoyStick axis", axis);
+  }
+}
