@@ -1,8 +1,6 @@
 const joystick = require("joystick");
 
 class Ps3Controller {
-  controller = undefined;
-
   constructor() {
     // Init PS3 controller, 0 = /dev/input/js0
     // second param = deadzone of joystick
