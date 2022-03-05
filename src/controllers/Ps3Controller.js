@@ -6,12 +6,13 @@ class Ps3Controller {
     // second param = deadzone of joystick
     // third param = sensitivity
     this.controller = new joystick(0, 3500, 350);
+    console.log("Controller initialized");
   }
 
   listen() {
+    console.log("Starting listeners:");
     // On button press (triggers when pressed and when released)
     this.controller.on("button", (button) => {
-      console.log("button", button);
       switch (button.number) {
         case 0: // cross
           this.onCrossClick(button);
@@ -30,7 +31,6 @@ class Ps3Controller {
 
     // On axis movement
     this.controller.on("axis", (axis) => {
-      console.log("axis", axis);
       switch (axis.number) {
         case 1: // left y-axis
           this.onLeftAxisMove(axis);
