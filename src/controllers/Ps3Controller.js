@@ -5,7 +5,7 @@ export class Ps3Controller {
 
   constructor() {
     // Init PS3 controller, 0 = /dev/input/js0
-    // second param = deadzone
+    // second param = deadzone of joystick
     // third param = sensitivity
     this.controller = new joystick(0, 3500, 350);
   }
