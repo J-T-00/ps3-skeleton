@@ -1,7 +1,7 @@
 const joystick = require("joystick");
 
 class Ps3Controller {
-  controller;
+  controller = undefined;
 
   constructor() {
     // Init PS3 controller, 0 = /dev/input/js0
