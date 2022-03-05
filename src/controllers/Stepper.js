@@ -2,7 +2,7 @@
 
 const Gpio = require("pigpio").Gpio;
 
-export class Stepper {
+class Stepper {
   constructor({
     step = 15,
     dir = 14,
@@ -167,3 +167,5 @@ export class Stepper {
     this._abort = true;
   }
 }
+
+module.exports = Stepper;

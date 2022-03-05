@@ -1,6 +1,6 @@
 const joystick = require("joystick");
 
-export class Ps3Controller {
+class Ps3Controller {
   controller;
 
   constructor() {
@@ -68,3 +68,5 @@ export class Ps3Controller {
     console.log("Right JoyStick axis", axis);
   }
 }
+
+module.exports = Ps3Controller;
